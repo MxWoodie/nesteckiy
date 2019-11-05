@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Book } from '../book';
-import { BookService } from '../book.service';
+import { CommunicationService } from '../communication.service';
 
 @Component({
   selector: 'app-book-item',
@@ -9,14 +9,13 @@ import { BookService } from '../book.service';
 })
 export class BookItemComponent implements OnInit {
   @Input() book: Book;
-  @Output() onDelete = new EventEmitter();
 
-  constructor(private bookService: BookService) { }
+  constructor(private communicationService: CommunicationService) { }
 
   ngOnInit() {
   }
 
   onDeleteClick() {
-    this.bookService.deleteBook(this.book.id).subscribe(data => this.onDelete.emit());
+    this.communicationService.removeBook(this.book.id);
   }
 }

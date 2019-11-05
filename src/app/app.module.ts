@@ -5,16 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { BookItemComponent } from './book-item/book-item.component';
-import { from } from 'rxjs';
 import { AddBookComponent } from './add-book/add-book.component';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { BookSectionComponent } from './book-section/book-section.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     BookItemComponent,
-    AddBookComponent
+    AddBookComponent,
+    BookSectionComponent
   ],
   imports: [
     BrowserModule,

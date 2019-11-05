@@ -1,6 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { BookService } from '../book.service';
+import { CommunicationService } from '../communication.service';
 import { Book } from '../book';
 
 @Component({
@@ -9,12 +9,11 @@ import { Book } from '../book';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
-  @Output() onAdd = new EventEmitter();
 
-  addBookForm;
+  private addBookForm;
 
   constructor(
-    private bookService: BookService,
+    private communicationService: CommunicationService,
     private formBuilder: FormBuilder
   ) { }
 
@@ -26,8 +25,7 @@ export class AddBookComponent implements OnInit {
   }
 
   onSubmit(book: Book) {
-    console.warn(book);
-    this.bookService.addBook(book).subscribe(data => this.onAdd.emit());
+    this.communicationService.addBook(book);
     this.addBookForm.reset(); 
   }
 
