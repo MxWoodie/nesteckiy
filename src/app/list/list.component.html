@@ -1,0 +1,4 @@
+<app-add-book class="add-panel" (onAdd)="refresh()"></app-add-book>
+<ul>
+  <app-book-item *ngFor="let book of books" [book]="book" (onDelete)="refresh()"></app-book-item>
+</ul>

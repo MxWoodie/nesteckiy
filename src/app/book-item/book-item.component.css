@@ -1,0 +1,26 @@
+li {
+  width: 500px;
+  border: 1px solid black;
+  margin-bottom: 3px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.id {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.name {
+  display: inline-block;
+
+}
+
+.delete {
+  float: right;
+  color: brown;
+}
+
+.description {
+  display: block;
+}

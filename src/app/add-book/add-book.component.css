@@ -1,0 +1,12 @@
+form {
+  width: 500px;
+}
+
+input {
+  width: 230px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 40px;
+}
